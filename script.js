@@ -149,13 +149,17 @@ function startCountdown(count, min, max, start, seed) {
       const [a, b] = String(minute).padStart(2, "0");
       countdownWillStartEl.innerHTML = `
 <p>&nbsp;</p>
-<img src='img/${a}.png' width=100 height=150 />
-<img src='img/${b}.png' width=100 height=150 />
-<img src='img/coplon.png' width=100 height=150 />
-<img src='img/0.png' width=100 height=150 />
-<img src='img/0.png' width=100 height=150 />
-<img src='img/coplon.png' width=100 height=150 />
-<img src='img/0.png' width=100 height=150 />
+<div class='nr' style='background-position: -${
+        parseInt(a, 10) * 100
+      }px 0;'></div>
+<div class='nr' style='background-position: -${
+        parseInt(b, 10) * 100
+      }px 0;'></div>
+<div class='colon'></div>
+<div class='nr'></div>
+<div class='nr'></div>
+<div class='colon'></div>
+<div class='nr'></div>
 <p style='color: #333;text-align: center; font-family: sans-serif;'>Starts at ${startTime.toTimeString()}</p>
       `;
       document.body.style.backgroundColor = "black";
