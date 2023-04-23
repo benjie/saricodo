@@ -26,6 +26,17 @@
         .colon {
           background-position: 1000px 0;
         }
+        #bang_fade {
+          display: none;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background-color: #ffeeee;
+          opacity: 1;
+          transition: opacity 5s;
+        }
       </style>
   </head>
   <body>
@@ -64,7 +75,6 @@
 
     <div id='countdown_will_start' style='display: none;'>
       COUNTDOWN WILL START...
-
     </div>
 
     <div id='countdown' style='display: none;'>
@@ -80,6 +90,7 @@
     <div id='bang' style='display: none;text-align: center;'>
       <img src='img/Worldchange.png' />
     </div>
+    <div id='bang_fade'></div>
 
     <script src='script.js'></script>
   </body>

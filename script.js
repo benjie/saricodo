@@ -8,6 +8,7 @@ const generatedUrlEl = document.getElementById("generated_url");
 const countdownWillStartEl = document.getElementById("countdown_will_start");
 const countdownEl = document.getElementById("countdown");
 const bangEl = document.getElementById("bang");
+const bangFadeEl = document.getElementById("bang_fade");
 
 const aEl = document.getElementById("a");
 const bEl = document.getElementById("b");
@@ -133,7 +134,11 @@ function startCountdown(count, min, max, start, seed) {
     document.body.style.backgroundColor = "";
     if (Date.now() > +finish) {
       bangEl.style.display = "block";
+      bangFadeEl.style.display = "block";
       document.body.style.backgroundColor = "black";
+      setTimeout(() => {
+        bangFadeEl.style.opacity = "0";
+      }, 2000);
     } else if (Date.now() > +startTime) {
       setTimeout(updateCountdown, INTERVAL);
       updateCountdown();
