@@ -16,6 +16,16 @@
           align-items: center;
           justify-content: center;
         }
+        .nr, .colon {
+          display: inline-block;
+          width: 100px;
+          height: 150px;
+          background-image: url('img/map.png');
+          background-position: 0 0;
+        }
+        .colon {
+          background-position: 1000px 0;
+        }
       </style>
   </head>
   <body>
@@ -58,8 +68,13 @@
     </div>
 
     <div id='countdown' style='display: none;'>
-      COUNTDOWN
-
+      <div class='nr' id='a'></div>
+      <div class='nr' id='b'></div>
+      <img src='img/coplon.png' width=100 height=150 />
+      <div class='nr' id='c'></div>
+      <div class='nr' id='d'></div>
+      <img src='img/coplon.png' width=100 height=150 />
+      <div class='nr' id='e'></div>
     </div>
 
     <div id='bang' style='display: none;text-align: center;'>

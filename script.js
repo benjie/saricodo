@@ -8,6 +8,13 @@ const generatedUrlEl = document.getElementById("generated_url");
 const countdownWillStartEl = document.getElementById("countdown_will_start");
 const countdownEl = document.getElementById("countdown");
 const bangEl = document.getElementById("bang");
+
+const aEl = document.getElementById("a");
+const bEl = document.getElementById("b");
+const cEl = document.getElementById("c");
+const dEl = document.getElementById("d");
+const eEl = document.getElementById("e");
+
 const INTERVAL = 33;
 
 // Seed with any uint32_t
@@ -111,15 +118,11 @@ function startCountdown(count, min, max, start, seed) {
     const [a, b] = String(minute).padStart(2, "0");
     const [c, d] = String(seconds).padStart(2, "0");
     const e = String(splitSeconds);
-    countdownEl.innerHTML = `\
-<img src='img/${a}.png' width=100 height=150 />
-<img src='img/${b}.png' width=100 height=150 />
-<img src='img/coplon.png' width=100 height=150 />
-<img src='img/${c}.png' width=100 height=150 />
-<img src='img/${d}.png' width=100 height=150 />
-<img src='img/coplon.png' width=100 height=150 />
-<img src='img/${e}.png' width=100 height=150 />
-`;
+    aEl.style.backgroundPosition = `-${parseInt(a, 10) * 100}px 0px`;
+    bEl.style.backgroundPosition = `-${parseInt(b, 10) * 100}px 0px`;
+    cEl.style.backgroundPosition = `-${parseInt(c, 10) * 100}px 0px`;
+    dEl.style.backgroundPosition = `-${parseInt(d, 10) * 100}px 0px`;
+    eEl.style.backgroundPosition = `-${parseInt(e, 10) * 100}px 0px`;
     timeout = setTimeout(updateCountdown, INTERVAL);
   }
   function updateState() {
