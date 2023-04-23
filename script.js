@@ -137,7 +137,20 @@ function startCountdown(count, min, max, start, seed) {
       countdownEl.style.display = "block";
       document.body.style.backgroundColor = "black";
     } else {
-      countdownWillStartEl.innerHTML = `Countdown will start at ${startTime.toTimeString()}`;
+      const minute = durations.length;
+      const [a, b] = String(minute).padStart(2, "0");
+      countdownWillStartEl.innerHTML = `
+<p>&nbsp;</p>
+<img src='img/${a}.png' width=100 height=150 />
+<img src='img/${b}.png' width=100 height=150 />
+<img src='img/coplon.png' width=100 height=150 />
+<img src='img/0.png' width=100 height=150 />
+<img src='img/0.png' width=100 height=150 />
+<img src='img/coplon.png' width=100 height=150 />
+<img src='img/0.png' width=100 height=150 />
+<p style='color: #333;text-align: center; font-family: sans-serif;'>Starts at ${startTime.toTimeString()}</p>
+      `;
+      document.body.style.backgroundColor = "black";
       countdownWillStartEl.style.display = "block";
       setTimeout(updateState, +startTime - Date.now());
     }
