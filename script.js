@@ -127,14 +127,15 @@ function startCountdown(count, min, max, start, seed) {
     countdownWillStartEl.style.display = "none";
     countdownEl.style.display = "none";
     bangEl.style.display = "none";
+    document.body.style.backgroundColor = "";
     if (Date.now() > +finish) {
       bangEl.style.display = "block";
-      document.body.style.backgroundColor = "black";
       document.body.style.backgroundColor = "black";
     } else if (Date.now() > +startTime) {
       setTimeout(updateCountdown, INTERVAL);
       updateCountdown();
       countdownEl.style.display = "block";
+      document.body.style.backgroundColor = "black";
     } else {
       countdownWillStartEl.innerHTML = `Countdown will start at ${startTime.toTimeString()}`;
       countdownWillStartEl.style.display = "block";
