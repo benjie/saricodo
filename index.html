@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Saricodo</title>
+  </head>
+  <body>
+    <div id='configure'>
+      <p>
+      <label>
+        Number of 1 minute segments: <input id='segment_count' type='number' value='20' />
+      </label>
+      </p>
+      <p>
+      <label>
+        Minimum duration of segment (seconds): <input id='segment_min' type='number' value='15' />
+      </label>
+      </p>
+      <p>
+      <label>
+        Minimum duration of segment (seconds): <input id='segment_max' type='number' value='60' />
+      </label>
+      </p>
+      <p>
+      <label>
+        Start time (24h format: <code>HH:MM</code>): <input id='start_time' type='time' value='16:00'  />
+      </label>
+      </p>
+      <p>
+      <button id='generate'>
+        Generate URL
+      </button>
+      </p>
+      <div id='generated'>
+        Share this URL with your crew:
+        <br />
+        <input type='text' readonly id='generated_url' size=100 />
+      </div>
+    </div>
+
+    <div id='countdown_will_start' style='display: none;'>
+      COUNTDOWN WILL START...
+
+    </div>
+
+    <div id='countdown' style='display: none;'>
+      COUNTDOWN
+
+    </div>
+
+    <div id='bang' style='display: none;text-align: center;'>
+      <img src='img/Worldchange.png' />
+    </div>
+
+    <script src='script.js'></script>
+  </body>
+</html>
