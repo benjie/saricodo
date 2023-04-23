@@ -5,6 +5,7 @@ const segmentMaxEl = document.getElementById("segment_max");
 const startTimeEl = document.getElementById("start_time");
 const generateEl = document.getElementById("generate");
 const generatedUrlEl = document.getElementById("generated_url");
+const linkEl = document.getElementById("link");
 const countdownWillStartEl = document.getElementById("countdown_will_start");
 const countdownEl = document.getElementById("countdown");
 const bangEl = document.getElementById("bang");
@@ -61,6 +62,8 @@ generateEl.onclick = (e) => {
   const start = startTimeEl.value;
   const url = `${window.location.protocol}//${window.location.host}${window.location.pathname}?count=${count}&min=${min}&max=${max}&start=${start}&seed=${seed}`;
   generatedUrlEl.value = url;
+  linkEl.href = url;
+  linkEl.style.display = "";
   const { durations, startTime, finish } = generateValues(
     count,
     min,
@@ -81,6 +84,13 @@ if (window.location.search?.length > 0) {
     obj[key] = value;
   }
   startCountdown(obj.count, obj.min, obj.max, obj.start, obj.seed);
+} else {
+  const now = new Date();
+  now.setMinutes(now.getMinutes() + 1);
+  startTimeEl.value = `${String(now.getHours()).padStart(2, "0")}:${String(
+    now.getMinutes()
+  ).padStart(2, "0")}`;
+  configureEl.style.display = "block";
 }
 
 function startCountdown(count, min, max, start, seed) {
