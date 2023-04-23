@@ -35,10 +35,8 @@ function generateValues(_count, _min, _max, _start, _seed) {
   const rng = mulberry32(seed);
   const durations = [];
   let totalSeconds = 0;
-  console.log({ count, min, max });
   for (let i = 0; i < count; i++) {
     const duration = min + Math.floor(rng() * (1 + max - min));
-    console.log({ duration });
     durations.push(duration);
     totalSeconds += duration;
   }
@@ -85,8 +83,6 @@ function startCountdown(count, min, max, start, seed) {
     start,
     seed
   );
-  console.log(startTime);
-  console.log(finish);
   configureEl.style.display = "none";
   let timer;
   function updateCountdown() {
